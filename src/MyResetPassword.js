@@ -9,7 +9,7 @@ export default function MyResetPassword() {
     const ref = useRef(null);
     const qs = require('query-string');
     const parsed = qs.parse(window.location.search);
-    
+
     const username = parsed.username;
     const token = parsed.token;
 
@@ -22,32 +22,34 @@ export default function MyResetPassword() {
     const txtRepeatedPassword = useRef(null);
 
     function ResetPassword() {
-       
+debugger;
         if (txtPassword.current.value == txtRepeatedPassword.current.value) {
-                  fetch('http://localhost:5000/api/Credential/UpdateUser', {
-        //fetch('http://localhost:33512/api/Credential/PasswordRecovery', {
+            
+                fetch('http://shop.somana.ir/api/Credential/UpdateUser', {
+                //fetch('http://localhost:5000/api/Credential/UpdateUser', {
+                //fetch('http://localhost:33512/api/Credential/PasswordRecovery', {
 
-            method: "PUT",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json; charset=utf-8"
-            },
-            body: JSON.stringify({
-                token: token,
-                userName: username,
-                password: txtPassword.current.value,
-              })
-        })
-            .then(response => response.json())
-            .then(setShowAlertSuccess(true), txtPassword.current.value="" , txtRepeatedPassword.current.value="")
-            .catch(e => alert(e));
-        }  
+                method: "PUT",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                body: JSON.stringify({
+                    UserName: username,
+                    Token: token,
+                    Password: txtPassword.current.value,
+                })
+            })
+                .then(response => response.json())
+                .then(setShowAlertSuccess(true), txtPassword.current.value = "", txtRepeatedPassword.current.value = "")
+                .catch(e => alert(e));
+        }
         else
-        alert('Passwords are not match');
+            alert('Passwords are not match');
     }
 
     return (
-        <Container style={{ border: "solid", borderColor: "#dd00dd", backgroundColor: "antiquewhite", paddingTop: "100px", paddingBottom: "100px" }}>          
+        <Container style={{ border: "solid", borderColor: "#dd00dd", backgroundColor: "antiquewhite", paddingTop: "100px", paddingBottom: "100px" }}>
             <Alert name="alertsucess" show={showAlertSuccess} variant="success" onClose={() => setShowAlertSuccess(false)} dismissible>
                 You have successfully changed your password...Please login from menu.
             </Alert>
@@ -88,8 +90,8 @@ export default function MyResetPassword() {
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
-                </Col>         
-                <Col></Col> 
+                </Col>
+                <Col></Col>
             </Row>
 
             <div style={{ textAlign: "center" }}>

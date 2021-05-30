@@ -50,7 +50,9 @@ export default function MyShoppingCartDetails() {
             UserId: dsUser.items[0].UserId
         }
 
-        fetch('http://localhost:5000/api/Order/RegisterOrder', {
+        // fetch('http://localhost:5000/api/Order/RegisterOrder', {
+        fetch('http://shop.somana.ir/api/Order/RegisterOrder', {
+
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -68,10 +70,12 @@ export default function MyShoppingCartDetails() {
         alert('You Have Sumbmitted an Order No :' + responsedOrder.OrderId)
         // let Product = JSON.parse(JSON.stringify(dsCart.items));
         // Product[0]["OrderId"] = responsedOrder.OrderId;
-       
-       let  Product = { orderId: responsedOrder.OrderId , products: dsCart.items };
 
-        fetch('http://localhost:5000/api/Order/RegisterOrderDetails', {
+        let Product = { orderId: responsedOrder.OrderId, products: dsCart.items };
+
+        // fetch('http://localhost:5000/api/Order/RegisterOrderDetails', {
+        fetch('http://shop.somana.ir/api/Order/RegisterOrderDetails', {
+
             method: "PUT",
             headers: {
                 "Accept": "application/json",
@@ -134,8 +138,8 @@ export default function MyShoppingCartDetails() {
                     <td>{item.price * item.quantity} $</td>
                     <td>
                         <ButtonGroup size="sm">
-                            {item.quantity >= 1 ? <Button onClick={() => SubQuantity(item.id)}><FontAwesomeIcon icon="minus-square" style={{ fontSize: "14px", color: "white" }}></FontAwesomeIcon></Button> : ""}
-                            <Button onClick={() => AddQuantity(item.id)}><FontAwesomeIcon icon="plus-square" style={{ fontSize: "14px", color: "white" }}></FontAwesomeIcon></Button>
+                            {item.quantity >= 1 ? <Button onClick={() => SubQuantity(item.ProductId)}><FontAwesomeIcon icon="minus-square" style={{ fontSize: "14px", color: "white" }}></FontAwesomeIcon></Button> : ""}
+                            <Button onClick={() => AddQuantity(item.ProductId)}><FontAwesomeIcon icon="plus-square" style={{ fontSize: "14px", color: "white" }}></FontAwesomeIcon></Button>
                             <Button onClick={() => RemoveFromCart(item)}><FontAwesomeIcon icon="trash-alt" style={{ fontSize: "14px", color: "white" }}></FontAwesomeIcon></Button>
                         </ButtonGroup>
                     </td>

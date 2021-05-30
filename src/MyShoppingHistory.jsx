@@ -36,7 +36,9 @@ export default function MyShoppingHistory() {
 
     function BindGridShopping() {
         debugger;
-            fetch('http://localhost:5000/api/Order/ShoppingHistory/', {
+            // fetch('http://localhost:5000/api/Order/ShoppingHistory/', {
+                fetch('http://shop.somana.ir/api/Order/ShoppingHistory/', {
+
             method: "PATCH",
             headers: {
                 "Accept": "application/json",

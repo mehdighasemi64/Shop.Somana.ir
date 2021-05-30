@@ -18,7 +18,8 @@ export default function MyPasswordRecovery() {
             email: txtEmail.current.value
         }
         debugger;
-         fetch('http://localhost:5000/api/Credential/PasswordRecovery', {
+        fetch('http://shop.somana.ir/api/Credential/PasswordRecovery', {
+        //fetch('http://localhost:5000/api/Credential/PasswordRecovery', {
        // fetch('http://localhost:33512/api/Credential/PasswordRecovery', {
 
             method: "POST",

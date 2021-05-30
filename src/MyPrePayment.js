@@ -30,7 +30,8 @@ export default function MyPrePayment() {
             OrderId: parseInt(sessionStorage.getItem('sessionStorageOrderId'))
         }
         debugger;
-        fetch('http://localhost:5000/api/ZarinShop/RegisterShop/', {
+        //fetch('http://localhost:5000/api/ZarinShop/RegisterShop/', {
+        fetch('http://shop.somana.ir/api/ZarinShop/RegisterShop/', {
 
             method: "POST",
             headers: {
@@ -40,7 +41,7 @@ export default function MyPrePayment() {
             body: JSON.stringify(Pay)
         })
             .then(response => response.json())
-           // .then(response => alert(response))
+            // .then(response => alert(response))
             .then(response => response != "nok" ? window.location.href = "https://www.zarinpal.com/pg/StartPay/" + response : alert("خطایی در ثبت اطلاعات به وحود آمده است.لطفا دوباره تلاش نماید!. "))
             .catch(e => alert(e));
     }

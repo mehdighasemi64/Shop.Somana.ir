@@ -26,7 +26,7 @@ export default function MyRegisterUser() {
     const txtCity = useRef(null);
 
     const handleSubmit = (event) => {
-
+debugger;
         const form = RegisterationForm;
 
         if (form.current.checkValidity() === false) {
@@ -74,6 +74,8 @@ export default function MyRegisterUser() {
     }
 
     function RegisterUser() {
+        alert('this is register user')
+        debugger;
         let user = {
             UserId: "0",
             UserName: txtUserName.current.value,
@@ -85,7 +87,9 @@ export default function MyRegisterUser() {
             Email: txtEmail.current.value,
             UserTypeId: 2
         }
-        fetch('http://localhost:5000/api/user/RegisterUser', {
+        //fetch('http://localhost:5000/api/user/RegisterUser', {        
+        fetch('http://shop.somana.ir/api/user/RegisterUser', {
+
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -103,7 +107,7 @@ export default function MyRegisterUser() {
 
     return (
 
-        <div style={{ border: "solid", borderColor: "#dd00dd", padding: "20px", backgroundColor:"antiquewhite" }}>
+        <div style={{ border: "solid", borderColor: "#dd00dd", padding: "20px", backgroundColor: "antiquewhite" }}>
 
             <Alert name="alertsucess" show={showAlertSuccess} variant="success" onClose={() => setShowAlertSuccess(false)} dismissible>
                 You have successfully registered in Somana Shop...Please login from menu.

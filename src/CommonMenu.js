@@ -110,7 +110,8 @@ export default function CommonMenu() {
     function BindMenuItem() {
         debugger;
         //fetch('http://localhost:33511/api/Category/AllProductCategory/', {
-          fetch('http://localhost:5000/api/Category/AllProductCategory/', {
+         // fetch('http://localhost:5000/api/Category/AllProductCategory/', {
+            fetch('http://shop.somana.ir/api/Category/AllProductCategory/', {
             method: "GET",
             headers: {
                 "Accept": "application/json",

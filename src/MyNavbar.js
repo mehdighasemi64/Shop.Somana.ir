@@ -28,8 +28,9 @@ export default function MyNavbar() {
             PassWord: txtPassword.current.value,
         }
         debugger;
-
-        fetch('http://localhost:5000/api/user/LoginUser/', {
+        
+        fetch('http://shop.somana.ir/api/user/LoginUser/', {
+       // fetch('http://localhost:5000/api/user/LoginUser/', {
        //     fetch('http://localhost:33512/api/user/LoginUser/', {
 
             method: "PUT",

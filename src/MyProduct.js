@@ -23,7 +23,8 @@ export default function MyProduct() {
 
 
     function BindProducts() {
-          fetch('http://localhost:5000/api/Product/AllProduct/', {
+        fetch('http://shop.somana.ir/api/Product/AllProduct/', {
+          //fetch('http://localhost:5000/api/Product/AllProduct/', {
          // fetch('http://localhost:33512/api/Product/AllProduct/', {
 
             method: "GET",

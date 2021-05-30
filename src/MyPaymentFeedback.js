@@ -3,7 +3,7 @@ import { Card, CardDeck, Button, Row, Col, CardGroup } from 'react-bootstrap'
 import { EmptyCartList } from './Actions';
 import { useDispatch, useSelector } from "react-redux"; // new for Hook instead of connect
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function MyPaymentFeedback() {
 
@@ -21,8 +21,8 @@ export default function MyPaymentFeedback() {
     let result = "";
 
     function Success(response) {
-      //  result = response;
-      dispatch(EmptyCartList(null));
+        //  result = response;
+        dispatch(EmptyCartList(null));
     }
 
     function Failure() {
@@ -30,14 +30,14 @@ export default function MyPaymentFeedback() {
     }
 
     function HandleZarinFeedback() {
-        
+
         if (Status == "OK") {
             let shop = {
                 Authority: Authority
             };
             debugger;
-                fetch('http://localhost:5000/api/ZarinShop/HandleZarinFeedback', {
-
+            //fetch('http://localhost:5000/api/ZarinShop/HandleZarinFeedback', {
+            fetch('http://shop.somana.ir/api/ZarinShop/HandleZarinFeedback', {
                 method: "PATCH",
                 headers: {
                     "Accept": "application/json",
@@ -46,14 +46,14 @@ export default function MyPaymentFeedback() {
                 body: JSON.stringify(shop)
             })
                 .then(response => response.json())
-                .then(response => response != "NOK" ? () => {Success(response)} : { Failure })
+                .then(response => response != "NOK" ? () => { Success(response) } : { Failure })
                 .catch(e => alert(e));
-       }
+        }
         else {
             alert('Failure in payment')
         }
     }
-    
+
     if (Status == "OK") {
         result =
             <div>
@@ -69,7 +69,7 @@ export default function MyPaymentFeedback() {
                             <p>Please be patient until our colleagues contact you for delivery</p>
                         </Card.Body>
                         <Card.Footer className="text-white">
-                        <Link to='/'><Button variant="dark" >Home</Button></Link>
+                            <Link to='/'><Button variant="dark" >Home</Button></Link>
                         </Card.Footer>
                     </Card>
                 </CardGroup>
@@ -77,28 +77,28 @@ export default function MyPaymentFeedback() {
     }
     else {
         result =
-        <div>
-            <CardGroup>
-                <Card className="text-center" bg={'gray'} style={{ width: '18rem' }}>
-                    <Card.Header>Payment Failure</Card.Header>
-                    <Card.Body>
-                        <Card.Title>Sorry</Card.Title>
-                        <Card.Text>
-                            <FontAwesomeIcon icon="ban" size="10x" color="red" />
-                        </Card.Text>
-                        <p>Payment process failed with refrence number: {Authority}</p>
-                        <p>Please contact our colleagues to check the details.</p>
-                    </Card.Body>
-                    {/* <Card.Footer className="text-white">                        
+            <div>
+                <CardGroup>
+                    <Card className="text-center" bg={'gray'} style={{ width: '18rem' }}>
+                        <Card.Header>Payment Failure</Card.Header>
+                        <Card.Body>
+                            <Card.Title>Sorry</Card.Title>
+                            <Card.Text>
+                                <FontAwesomeIcon icon="ban" size="10x" color="red" />
+                            </Card.Text>
+                            <p>Payment process failed with refrence number: {Authority}</p>
+                            <p>Please contact our colleagues to check the details.</p>
+                        </Card.Body>
+                        {/* <Card.Footer className="text-white">                        
                         <Link to='/'><Button variant="dark" >Home</Button></Link>
                     </Card.Footer> */}
-                </Card>
-            </CardGroup>
-        </div>;
+                    </Card>
+                </CardGroup>
+            </div>;
     }
 
     return (
-        <div style={{border:"solid", borderColor:"#dd00dd",backgroundColor:"antiquewhite"}}>
+        <div style={{ border: "solid", borderColor: "#dd00dd", backgroundColor: "antiquewhite" }}>
             {result}
         </div>
     );

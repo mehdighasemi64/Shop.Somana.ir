@@ -64,7 +64,8 @@ export default function MyProductManagement() {
     function BindDropDownProductCategory() {
         debugger;
         // fetch('http://localhost:33512/api/Category/AllProductCategory', {
-        fetch('http://localhost:5000/api/Category/AllProductCategory/', {
+        //fetch('http://localhost:5000/api/Category/AllProductCategory/', {
+        fetch('http://shop.somana.ir/api/Category/AllProductCategory/', {
 
             method: "GET",
             headers: {
@@ -78,7 +79,8 @@ export default function MyProductManagement() {
 
     function BindDropDownCountry() {
         debugger;
-        fetch('http://localhost:5000/api/Country/AllCountry/', {
+        // fetch('http://localhost:5000/api/Country/AllCountry/', {
+        fetch('http://shop.somana.ir/api/Country/AllCountry/', {
 
             method: "GET",
             headers: {
@@ -93,8 +95,8 @@ export default function MyProductManagement() {
     function BindGridProducts() {
 
         debugger;
-        fetch('http://localhost:5000/api/Product/AllProduct/', {
-
+        //fetch('http://localhost:5000/api/Product/AllProduct/', {
+        fetch('http://shop.somana.ir/api/Product/AllProduct/', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -122,7 +124,8 @@ export default function MyProductManagement() {
     function DeleteProduct() {
 
         debugger;
-        fetch('http://localhost:5000/api/Product/DeleteProduct/', {
+        //fetch('http://localhost:5000/api/Product/DeleteProduct/', {
+            fetch('http://shop.somana.ir/api/Product/DeleteProduct/', {
 
             method: "DELETE",
             headers: {
@@ -151,8 +154,8 @@ export default function MyProductManagement() {
         var files = [];
         files = fileImage.current.files[0];
 
-        let image={};
-        
+        let image = {};
+
         var title = "";
         var data = {};
         if (files != undefined) {
@@ -184,7 +187,8 @@ export default function MyProductManagement() {
             product: product
         }
 
-        fetch('http://localhost:5000/api/Product/UpdateProduct/', {
+        //  fetch('http://localhost:5000/api/Product/UpdateProduct/', {
+        fetch('http://shop.somana.ir/api/Product/UpdateProduct/', {
 
             method: "PUT",
             headers: {
@@ -203,7 +207,7 @@ export default function MyProductManagement() {
     function handleChangeCategory(e) {
         setselectedCategory(e.target.value)
     }
-    
+
     function handleChangeSubcatgory(e) {
         setselectedSubCategory(e.target.value)
     }
@@ -271,7 +275,8 @@ export default function MyProductManagement() {
             product: product
         }
 
-        fetch('http://localhost:5000/api/Product/RegisterProduct/', {
+        //  fetch('http://localhost:5000/api/Product/RegisterProduct/', {
+        fetch('http://shop.somana.ir/api/Product/RegisterProduct/', {
 
             method: "POST",
             headers: {

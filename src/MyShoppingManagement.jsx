@@ -40,7 +40,9 @@ export default function MyShoppingManagement() {
     function BindGridManagement() {
 
         debugger;
-            fetch('http://localhost:5000/api/Order/ManageShopping/', {
+            // fetch('http://localhost:5000/api/Order/ManageShopping/', {
+                fetch('http://shop.somana.ir/api/Order/ManageShopping/', {
+
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -67,7 +69,9 @@ export default function MyShoppingManagement() {
     function DeliveryDone() {
 
         debugger;
-            fetch('http://localhost:5000/api/DeliveryOrder/DeliveryDone/', {
+           // fetch('http://localhost:5000/api/DeliveryOrder/DeliveryDone/', {
+                fetch('http://shop.somana.ir/api/DeliveryOrder/DeliveryDone/', {
+
             method: "PUT",
             headers: {
                 "Accept": "application/json",

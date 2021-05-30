@@ -43,7 +43,8 @@ export default function MyShippingDetails() {
             Description: txtDescription.current.value
         }
         debugger;
-            fetch('http://localhost:5000/api/DeliveryOrder/RegisterDeliveryOrder', {
+            //fetch('http://localhost:5000/api/DeliveryOrder/RegisterDeliveryOrder', {
+                fetch('http://shop.somana.ir/api/DeliveryOrder/RegisterDeliveryOrder', {
 
             method: "POST",
             headers: {
@@ -70,7 +71,9 @@ export default function MyShippingDetails() {
         }
 
         debugger;
-            fetch('http://localhost:5000/api/ZarinShop/RegisterShop/', {
+            //fetch('http://localhost:5000/api/ZarinShop/RegisterShop/', {
+                fetch('http://shop.somana.ir/api/ZarinShop/RegisterShop/', {
+
             method: "POST",
             headers: {
                 "Accept": "application/json",

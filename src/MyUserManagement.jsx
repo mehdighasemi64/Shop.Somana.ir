@@ -46,7 +46,9 @@ export default function MyUserManagement() {
     function BindGridUsers() {
 
         debugger;
-            fetch('http://localhost:5000/api/User/AllUsers/', {
+        //fetch('http://localhost:5000/api/User/AllUsers/', {
+        fetch('http://shop.somana.ir/api/User/AllUsers/', {
+
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -75,7 +77,9 @@ export default function MyUserManagement() {
     function DeleteUser() {
 
         debugger;
-            fetch('http://localhost:5000/api/User/DeleteUser/', {
+        //fetch('http://localhost:5000/api/User/DeleteUser/', {
+        fetch('http://shop.somana.ir/api/User/DeleteUser/', {
+
             method: "DELETE",
             headers: {
                 "Accept": "application/json",
@@ -88,15 +92,15 @@ export default function MyUserManagement() {
             .then(response => ClearForm())
             .then(setShow(false))
             .catch(e => alert(e));
-    }    
-    
+    }
+
     function UpdateUser() {
 
         var User = {
             UserId: txtUserId.current.value,
             UserName: txtUserName.current.value,
             FirstName: txtFirstName.current.value,
-            LastName :txtLastName.current.value,
+            LastName: txtLastName.current.value,
             Mobile: txtMobile.current.value,
             Email: txtEmail.current.value,
             Password: txtPassword.current.value,
@@ -104,7 +108,9 @@ export default function MyUserManagement() {
         }
 
         debugger;
-            fetch('http://localhost:5000/api/User/UpdateUser/', {
+        //fetch('http://localhost:5000/api/User/UpdateUser/', {
+        fetch('http://shop.somana.ir/api/User/UpdateUser/', {
+
             method: "PATCH",
             headers: {
                 "Accept": "application/json",
@@ -131,8 +137,8 @@ export default function MyUserManagement() {
     }
 
     return (
-        <div id="parentDivOfGrid" style={{border:"solid" , borderColor:"#dd00dd", backgroundColor:"antiquewhite"}}>
-             { (dsUser.items == "") && (
+        <div id="parentDivOfGrid" style={{ border: "solid", borderColor: "#dd00dd", backgroundColor: "antiquewhite" }}>
+            { (dsUser.items == "") && (
                 <Redirect to="/"> </Redirect>
             )}
             <br />

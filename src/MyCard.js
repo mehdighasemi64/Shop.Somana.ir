@@ -44,7 +44,7 @@ export default function MyCard() {
     }
     return (
         <div style={{backgroundColor:"#ffffff75"}}>
-            <CardDeck>
+            <CardDeck style={{paddingTop:"10px" , paddingBottom: "10px"}}> 
                 <Card className="text-center" bg={'danger'} Primary style={{ width: '18rem' }}>
                     <Card.Header>Choclate</Card.Header>
                     <Card.Body>
@@ -58,22 +58,6 @@ export default function MyCard() {
                     </Card.Body>
                     <Card.Footer className="text-white">
                     <Link to='/Product'><Button variant="primary" >More Details</Button></Link>
-                    </Card.Footer>
-                </Card>
-
-                <Card className="text-center" bg={'info'} Primary style={{ width: '18rem' }}>
-                    <Card.Header>Dark Choclate</Card.Header>
-                    <Card.Body>
-                        <Card.Title>Lindt</Card.Title>
-
-                        <Card.Text>
-                            <Card.Img variant="top" className="img-fluid" src={FantasyPencil} style={{ width :"300px" , height:"300px" , objectFit:"contain"}} />
-                        </Card.Text>
-                        <p>This is a wider card with supporting text below as a natural lead-in to
-                            additional content</p>
-                    </Card.Body>
-                    <Card.Footer className="text-white">
-                        <Link to='/Product'><Button variant="primary" >More Details</Button></Link>
                     </Card.Footer>
                 </Card>
 
@@ -91,6 +75,22 @@ export default function MyCard() {
                         <Link to='/Product'><Button variant="primary" >More Details</Button></Link>
                     </Card.Footer>
                 </Card>
+
+                <Card className="text-center" bg={'info'} Primary style={{ width: '18rem' }}>
+                    <Card.Header>Dark Choclate</Card.Header>
+                    <Card.Body>
+                        <Card.Title>Lindt</Card.Title>
+
+                        <Card.Text>
+                            <Card.Img variant="top" className="img-fluid" src={FantasyPencil} style={{ width :"300px" , height:"300px" , objectFit:"contain"}} />
+                        </Card.Text>
+                        <p>This is a wider card with supporting text below as a natural lead-in to
+                            additional content</p>
+                    </Card.Body>
+                    <Card.Footer className="text-white">
+                        <Link to='/Product'><Button variant="primary" >More Details</Button></Link>
+                    </Card.Footer>
+                </Card>                
             </CardDeck>
 
             {/* {ShowProduct && <MyProduct></MyProduct>} */}

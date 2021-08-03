@@ -168,7 +168,7 @@ export default function MyShoppingCart2() {
                         <Badge variant="light" >{ds.items.length}</Badge>
                     </div>
                     <div>
-                        <Button style={{ backgroundColor: "khaki", padding: "0", border: "0", color: "darkgray" }}>
+                        <Button style={{ backgroundColor: "gold", padding: "0", border: "0", color: "darkgray" }}>
                             <FontAwesomeIcon icon="shopping-cart" style={{ fontSize: "30px", }} color="gray" />
                         </Button>
                     </div>

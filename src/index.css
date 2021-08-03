@@ -3,7 +3,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url(./images/BG/16.jpg);
+    /* background-image: url(./images/BG/16.jpg); */
     background-size: contain;
     background-position: top;
     background-size: cover;
@@ -19,8 +19,9 @@ code {
     /* Max Width of the popover (depending on the container!) */
 }
 
+/* for making Shopping cart table rows vertically aligned */
+
 .table>tbody>tr>td {
-    /* for making Shopping cart table rows vertically aligned */
     vertical-align: middle;
 }
 
@@ -291,7 +292,6 @@ section .section-title {
     }
 }
 
-
 .customButton {
     position: relative;
     -webkit-transition-duration: 0.4s;
@@ -321,3 +321,7 @@ section .section-title {
     opacity: 1;
     transition: 0s
 }
+
+
+  
+  

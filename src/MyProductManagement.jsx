@@ -64,7 +64,7 @@ export default function MyProductManagement() {
     function BindDropDownProductCategory() {
         debugger;
         // fetch('http://localhost:33512/api/Category/AllProductCategory', {
-        //fetch('http://localhost:5000/api/Category/AllProductCategory/', {
+       // fetch('http://localhost:5000/api/Category/AllProductCategory/', {
         fetch('http://shop.somana.ir/api/Category/AllProductCategory/', {
 
             method: "GET",
@@ -79,8 +79,8 @@ export default function MyProductManagement() {
 
     function BindDropDownCountry() {
         debugger;
-        // fetch('http://localhost:5000/api/Country/AllCountry/', {
-        fetch('http://shop.somana.ir/api/Country/AllCountry/', {
+         //fetch('http://localhost:5000/api/Country/AllCountry/', {
+           fetch('http://shop.somana.ir/api/Country/AllCountry/', {
 
             method: "GET",
             headers: {
@@ -96,7 +96,7 @@ export default function MyProductManagement() {
 
         debugger;
         //fetch('http://localhost:5000/api/Product/AllProduct/', {
-        fetch('http://shop.somana.ir/api/Product/AllProduct/', {
+          fetch('http://shop.somana.ir/api/Product/AllProduct/', {
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -124,6 +124,7 @@ export default function MyProductManagement() {
     function DeleteProduct() {
 
         debugger;
+        var ProductId = parseInt(txtProductId.current.value);
         //fetch('http://localhost:5000/api/Product/DeleteProduct/', {
             fetch('http://shop.somana.ir/api/Product/DeleteProduct/', {
 

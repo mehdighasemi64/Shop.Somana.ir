@@ -92,6 +92,7 @@ import MyMultiSteps from './MyMultiSteps';
 import MyStepper from './MyStepper'
 import MyPasswordRecovery from './MyPasswordRecovery';
 import MyResetPassword from './MyResetPassword';
+import { StylesProvider } from '@material-ui/styles';
 
 library.add( faTrashAlt, faPlusSquare, faMinusSquare, faStroopwafel, faCheckSquare, faCoffee, faBan, faUser, faShoppingCart, faShoppingBasket, faShoppingBag)
 
@@ -99,12 +100,12 @@ function App() {
   return (
     <div>
       <Router>
-        <Container>
+        <Container style={{ borderWidth: "thin", border:"solid", borderColor: "Gold", padding:"0px"}}>
           <Row>
             <Col>
               <MyNavbar />
             </Col>
-          </Row>          
+          </Row>  
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/Product/:SearchParam?' component={MyProduct} />
@@ -122,7 +123,6 @@ function App() {
             <Route exact path='/PasswordRecovery/' component={MyPasswordRecovery} />
             {/* <Route exact path='/ResetPassword/:username/:token' component={MyResetPassword} /> */}
             <Route exact path='/ResetPassword/' component={MyResetPassword} />
-
           </Switch>
           <Row>
             <Col>

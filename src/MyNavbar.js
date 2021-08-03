@@ -29,7 +29,7 @@ export default function MyNavbar() {
         }
         debugger;
         
-        fetch('http://shop.somana.ir/api/user/LoginUser/', {
+          fetch('http://shop.somana.ir/api/user/LoginUser/', {
        // fetch('http://localhost:5000/api/user/LoginUser/', {
        //     fetch('http://localhost:33512/api/user/LoginUser/', {
 
@@ -67,9 +67,9 @@ export default function MyNavbar() {
     }
 
     return (
-        <div style={{ backgroundColor: "read", marginTop: "20px" }}>
+        <div style={{ backgroundColor: "read" }}>
             {/* <nav  class="navbar navbar-expand-sm  navbar-dark  bg-dark "> */}
-            <nav class="navbar navbar-expand-sm navbar-dark" style={{ backgroundColor: "khaki" }}>
+            <nav class="navbar navbar-expand-sm navbar-dark" style={{ backgroundColor: "gold" }}>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -80,7 +80,7 @@ export default function MyNavbar() {
                     <div style={{ textAlign: "left" }}>
 
                         <div style={{ float: "left" }}>
-                            <Button style={{ backgroundColor: "khaki", border: "0px", color: "darkgray", paddingTop: "22px" }} onClick={() => setShowLoginModal(true)}>
+                            <Button style={{ backgroundColor: "gold", border: "0px", color: "darkgray", paddingTop: "22px" }} onClick={() => setShowLoginModal(true)}>
                                 {dsUser.items != "" ? dsUser.items[0].UserName : <FontAwesomeIcon icon="user" style={{ fontSize: "30px", color: "gray" }} />}
                             </Button>
                         </div>
